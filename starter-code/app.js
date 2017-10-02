@@ -10,8 +10,9 @@ const app = express();
 
 // Controllers
 const siteController = require("./routes/siteController");
-
 // Mongoose configuration
+const Schema = mongoose.Schema;
+
 mongoose.connect("mongodb://localhost/ibi-ironhack");
 
 // view engine setup
@@ -46,5 +47,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
